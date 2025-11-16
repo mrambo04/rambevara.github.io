@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Section</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .about-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .about-section img {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 20px;
+  }
+  .about-section p {
+    color: #333;
+  }
+
+  /* Additional CSS for Projects Section */
+.projects-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+}
+.card-img-top {
+  max-height: 180px; /* Adjust this value to fit the image properly in the card */
+  object-fit: cover; /* This makes sure the image covers the area properly */
+}
+.card-body {
+  padding: 15px;
+}
+.card-title {
+  font-size: 1.25rem;
+}
+.card-text {
+  margin-bottom: 15px;
+}
+
+/* Additional CSS for Skills Section */
+.skills-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.skills-section .card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.skills-section .card-img-top {
+  padding: 15px; /* Add padding around your images if needed */
+  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
+  height: 220px; /* Fixed height for consistency */
+  object-fit: contain; /* This will make sure the image is scaled properly within the container */
+}
+.skills-section .card-body {
+  padding: 15px;
+}
+.skills-section .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+.skills-section .btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+.skills-section .btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Additional CSS for Contact Section */
+.contact-section {
+  padding: 50px 0;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.social-icon {
+  width: 50px; /* Size of your icons */
+  margin-bottom: 10px;
+}
+/* Hover effect for icons */
+.social-icon:hover {
+  opacity: 0.7;
+}
+/* Style for links in the Contact section */
+.contact-section a {
+  color: #fff;
+  text-decoration: none; /* Removes underline from links */
+  display: inline-block; /* Allows for margin on the bottom */
+  margin-bottom: 10px;
+}
+.contact-section a:hover {
+  color: #ddd; /* Color when hovering over the link */
+}
+
+/* CSS for Sticky Navbar */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
+}
+
+/* Ensure padding is added to body to avoid content being hidden behind the navbar */
+body { 
+  padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style for navigation bar links */
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; /* Slightly lighter white when hovering over links */
+}
+
+/* Media query for responsive navbar collapsing */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Same as navbar color for seamless look */
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+
+<section id='about' class="about-section">
+  <div class="container">
+    <h2>About</h2>
+    <img src="images/about/profile.png" alt="Venkatesh">
+    <p>Hi, I'm <strong>Venkatesh</strong> a passionate <strong>Data Scientist</strong> with a solid foundation in programming, analytics, and artificial intelligence. I hold a B.Tech in Electrical and Electronics Engineering, where I developed a strong problem solving mindset and love for technology driven insights. I specialize in <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, and <strong>Natural Language Processing (NLP)</strong> building intelligent models that uncover patterns, predict outcomes, and automate decision making. My work includes <strong>sentiment analysis</strong>, <strong>text summarization</strong>, <strong>time series forecasting</strong>, and <strong>classification/regression</strong> models applied across real world datasets. I’ve built advanced NLP systems using BART, Hugging Face Transformers, and PyTorch. During my internships and projects, I developed solutions such as <strong>Mobiles Discount Prediction Streamlit</strong>, <strong>Digital Music Hybrid Recommender</strong>, <strong>Electrical Tools Object Detection</strong> and <strong>Festival Sales Based on Customer Demographics Sales Analysis</strong>, performing end-to-end data analysis, model training, and business insights generation. I’ve also created a <strong>Sentiment Analyzer NLP Streamlit</strong> using modern NLP frameworks and evaluation metrics like BLEU and ROUGE, showcasing deep understanding of natural language models.</p>
+    <p>My technical expertise covers <strong>Python, Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, Matplotlib, Seaborn, and Plotly</strong>. I’m skilled in <strong>SQL, Power BI</strong>, and building <strong>ETL data pipelines</strong> for analytics workflows. I have hands on experience in <strong>web scraping</strong> and data extraction using <strong>BeautifulSoup</strong> and <strong>Selenium</strong>, automating data collection from e-commerce and job portals for research and dashboards. Beyond modeling, I focus on <strong>model deployment</strong> and real world application. I deploy ML and NLP models using <strong>Streamlit</strong> both locally and on cloud platforms like <strong>Streamlit Cloud</strong> and <strong>Hugging Face Spaces</strong> for interactive demo apps. I excel in <strong>data visualization</strong> and <strong>data storytelling</strong>, turning complex data into actionable insights using interactive dashboards and visual reports in Power BI and Streamlit. I share my knowledge through my YouTube channel, <strong>Venkatesh’s Data Lab</strong>, where I explain data science projects, coding workflows, and visualization techniques for learners. My long term goal is to contribute to the growth of intelligent data systems and build scalable AI applications that bridge data insights with impactful real world outcomes.</p>
+  </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light">
+  <div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+
+      <!-- Project 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/mobile.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Mobile Discount Price Prediction</h5>
+            <p class="card-text">This project is an end-to-end data product that scrapes, validates, and merges mobile phone listings from Flipkart and Amazon into a unified dataset, culminating in a deployed Streamlit application that predicts the final discount price using an optimized ensemble machine learning model.</p>
+            <a href="mobiles-discount-prediction.streamlit.app" class="btn btn-primary">App Link</a>
+            <a href="https://github.com/VK-Venkatesh/mobiles-discount-prediction-streamlit" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/od.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Electrical Tools Odject Detection</h5>
+            <p class="card-text">This project implemented an Object Detection pipeline using YOLOv8 on a custom 500-image dataset of 10 electrical tool classes (labeled via Roboflow), culminating in a Streamlit application capable of real-time image and video inference.</p>
+            <a href="electrical-tools-object-detection.streamlit.app" class="btn btn-primary">App Link</a>
+            <a href="https://github.com/VK-Venkatesh/electrical-tools-object-detection" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/sentiment.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Sentiment Analyzer NLP Streamlit</h5>
+            <p class="card-text">This is a Deep Learning NLP Text Classification project that trains an LSTM model on a mental health sentiment dataset, applying rigorous text preprocessing and feature engineering, culminating in a Streamlit application for real-time prediction and classification of emotional states.</p>
+            <a href="sentiment-analyzer-nlp-Medical.streamlit.app" class="btn btn-primary">App Link</a>
+            <a href="https://github.com/VK-Venkatesh/sentiment-analyzer-nlp-streamlit" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/digital.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Digital Music Hybrid Recommender</h5>
+            <p class="card-text">This project implements a sophisticated Hybrid Recommender System for Amazon Digital Music data, integrating content-based (TF-IDF), collaborative (SVD), and popularity methods, and features a deployed Streamlit application with user-adjustable weighting for dynamic model tuning and streamlit application.</p>
+            <a href="digital-music-hybrid-recommender-v4.streamlit.app" class="btn btn-primary">App Link</a>
+            <a href="https://github.com/VK-Venkatesh/digital-music-hybrid-recommender" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/festival.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Festival Sales Based on Customer Demographics Sales Analysis</h5>
+            <p class="card-text">This project performs end to end Sales Analysis using EDA and advanced visualization on customer demographics and shopping habits, successfully deriving actionable insights regarding product performance, discount effectiveness, and the impact of festivals on sales and advanced Power BI visualizations.</p>
+            <a href="#" class="btn btn-primary">NAN</a>
+            <a href="https://github.com/VK-Venkatesh/festival-sales-based-on-customer-demographics-" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/imagecls.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Electrical Mechanical Image Classification</h5>
+            <p class="card-text">This project implemented an end-to-end Deep Learning Image Classification pipeline using a CNN-ANN model to accurately classify 7 categories of industrial electrical and mechanical components from a custom 3500+ image dataset, complete with a deployed Streamlit application for real-time inference.</p>
+            <a href="electrical-mechanical-image-classification.streamlit.app" class="btn btn-primary">App Link</a>
+            <a href="https://github.com/VK-Venkatesh/electrical-mechanical-image-classification" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 7 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/similarity.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Streamlit Similarity Search</h5>
+            <p class="card-text">This project created a Deep Learning Image Similarity Search web application using Streamlit, leveraging MobileNetV2 for feature extraction and Cosine Similarity on a custom dataset to instantly retrieve the Top 5 visually similar images in real time.</p>
+            <a href="app-image-similarity-search.streamlit.app" class="btn btn-primary">App Link</a>
+            <a href="https://github.com/VK-Venkatesh/streamlit-image-similarity-search" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 8 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/ats.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Resume ATS</h5>
+            <p class="card-text">This project developed a Streamlit web application for an ATS Checker that analyzes uploaded resumes, compares them against a job description, and provides a quantified ATS compatibility score to help users optimize their application materials.</p>
+            <a href="https://resumeats-check.streamlit.app/" class="btn btn-primary">App Link</a>
+            <a href="https://github.com/VK-Venkatesh/Resume_Ats" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 9 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/sports.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Sports Video Classifier VGG</h5>
+            <p class="card-text">A deep learning project that classifies end to end sports videos using frame based analysis with a pretrained VGG model, leveraging computer vision and transfer learning for accurate, automated sports recognition and analytics.</p>
+            <a href="#" class="btn btn-primary">NAN</a>
+            <a href="https://github.com/VK-Venkatesh/sports-video-classifier-vgg" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section bg-white">
+  <div class="container">
+    <h2 class="text-center mb-5"> Skills Covered</h2>
+    <div class="row">
+
+      <!-- Skill 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/python.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+            <p class="card-text">Core programming language for all data science workflows including data analysis, automation, and machine learning model development.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/ml.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Machine Learning</h5>
+            <p class="card-text">Experience building predictive models using regression, classification, clustering, and ensemble methods with Scikit-learn.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/dl.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Deep Learning</h5>
+            <p class="card-text">Hands-on experience with neural networks, CNNs, and RNNs using TensorFlow and PyTorch for AI applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/nlp.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Natural Language Processing</h5>
+            <p class="card-text">Implemented NLP models for sentiment analysis, summarization, and query based text generation using BERT and BART.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 5 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/genai.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Generative AI</h5>
+            <p class="card-text">Explored LLMs, prompt engineering, and fine tuning using Hugging Face and OpenAI APIs to build intelligent applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 6 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/powerbi.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Power BI</h5>
+            <p class="card-text">Developed interactive dashboards to visualize key metrics and business insights for data driven decision making.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 7 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/mysql.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">MySQL</h5>
+            <p class="card-text">Skilled in database creation, SQL queries, joins, and integrating data pipelines with Python and analytics tools.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 8 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/excel.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Excel</h5>
+            <p class="card-text">Strong command of Excel for data analysis, pivot tables, Power Query, and quick visual insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 9 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/datacleaning.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Cleaning</h5>
+            <p class="card-text">Processed and transformed messy data into structured datasets using Python libraries like Pandas and NumPy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 10 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/statistics.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Statistics & Probability</h5>
+            <p class="card-text">Applied statistical concepts like distributions, correlation, and hypothesis testing for analytical insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 11 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/eda.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Exploratory Data Analysis</h5>
+            <p class="card-text">Performed univariate, bivariate, and multivariate analysis to uncover patterns and data insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 12 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/datavis.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualization</h5>
+            <p class="card-text">Created advanced visualizations using Matplotlib, Seaborn, Plotly, and Power BI for impactful storytelling.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 13 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/thinking.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Critical Thinking & Problem Solving</h5>
+            <p class="card-text">Used analytical reasoning to identify data driven solutions and optimize business or model outcomes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 14 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/modeleval.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Model Evaluation</h5>
+            <p class="card-text">Evaluated models using metrics like RMSE, ROC AUC, Precision, Recall, and F1-Score to ensure high accuracy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 15 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/featureeng.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Feature Engineering</h5>
+            <p class="card-text">Transformed and created features to boost model performance and extract more predictive insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 16 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/modeldeploy.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Model Deployment</h5>
+            <p class="card-text">Deployed models using Streamlit locally and on the cloud for real time accessibility and interactivity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 17 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/dataeng.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Engineering</h5>
+            <p class="card-text">Built ETL pipelines, automated data workflows, and integrated structured and unstructured data sources.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 18 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/datastory.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Storytelling</h5>
+            <p class="card-text">Turned complex datasets into actionable stories using visual reports and dashboard presentations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 19 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/webscraping.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Web Scraping</h5>
+            <p class="card-text">Collected and analyzed large scale data using BeautifulSoup and Selenium for insights and automation.</p>
+          </div>
+        </div>
+      </div>
+
+            <!-- Skill 20 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/cloud.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Cloud Computing</h5>
+            <p class="card-text">The ability to deploy, scale, and manage machine learning models and data pipelines on cloud platforms essential for real world, production level data science solutions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section text-center text-white bg-dark">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <p><i class="fas fa-envelope"></i> venkateshvarada56@gmail.com</p>
+      </div>
+      <div class="col-lg-6">
+        <p><i class="fas fa-phone"></i> 9392692115</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="www.linkedin.com/in/venkatesh-ds25" target="_blank">
+          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+          
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://github.com/VK-Venkatesh" target="_blank">
+          <img src="icons/github.png" alt="GitHub" class="social-icon">
+          
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://www.kaggle.com/venkatesh2410" target="_blank">
+          <img src="icons/kaggle.png" alt="kaggle" class="social-icon">
+          
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://medium.com/@venkateshvarada56" target="_blank">
+          <img src="icons/medium.png" alt="Medium" class="social-icon">
+          
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="www.youtube.com/@venkatesh_ds" target="_blank">
+          <img src="icons/youtube.png" alt="YouTube" class="social-icon">
+
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://medium.com/@yourusername" target="_blank">
+          <img src="icons/cert.png" alt="Certificates" class="social-icon">
+          
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
