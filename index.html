@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ram Bevara | Data Analyst Portfolio</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .about-section {
+    text-align: center;
+    padding: 50px 0;
+  }
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  .about-section img {
+    width: 200px; /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 50%; /* Makes the image round */
+    margin-bottom: 20px;
+  }
+  .about-section p {
+    color: #333;
+  }
+
+  /* Additional CSS for Projects Section */
+.projects-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.card {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+}
+.card-img-top {
+  max-height: 180px; /* Adjust this value to fit the image properly in the card */
+  object-fit: cover; /* This makes sure the image covers the area properly */
+}
+.card-body {
+  padding: 15px;
+}
+.card-title {
+  font-size: 1.25rem;
+}
+.card-text {
+  margin-bottom: 15px;
+}
+
+/* Additional CSS for Skills Section */
+.skills-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+.skills-section .card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.skills-section .card-img-top {
+  padding: 15px; /* Add padding around your images if needed */
+  background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
+  height: 220px; /* Fixed height for consistency */
+  object-fit: contain; /* This will make sure the image is scaled properly within the container */
+}
+.skills-section .card-body {
+  padding: 15px;
+}
+.skills-section .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+.skills-section .btn-outline-primary {
+  color: #007bff;
+  border-color: #007bff;
+}
+.skills-section .btn-outline-primary:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Additional CSS for Contact Section */
+.contact-section {
+  padding: 50px 0;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.social-icon {
+  width: 50px; /* Size of your icons */
+  margin-bottom: 10px;
+}
+/* Hover effect for icons */
+.social-icon:hover {
+  opacity: 0.7;
+}
+/* Style for links in the Contact section */
+.contact-section a {
+  color: #fff;
+  text-decoration: none; /* Removes underline from links */
+  display: inline-block; /* Allows for margin on the bottom */
+  margin-bottom: 10px;
+}
+.contact-section a:hover {
+  color: #ddd; /* Color when hovering over the link */
+}
+
+/* CSS for Sticky Navbar */
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Adds a shadow for depth */
+}
+
+/* Ensure padding is added to body to avoid content being hidden behind the navbar */
+body { 
+  padding-top: 56px; /* Adjust this value based on the height of your navbar */
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Style for navigation bar links */
+.navbar-nav .nav-link {
+  color: white;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8f9fa; /* Slightly lighter white when hovering over links */
+}
+
+/* Media query for responsive navbar collapsing */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: #343a40; /* Same as navbar color for seamless look */
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+
+<section id='about' class="about-section">
+  <div class="container">
+    <h2>About</h2>
+    <img src="images/about/Profile.png" alt="Ram Bevara">
+    <p>Hi, I'm <strong>Ram Bevara</strong>, a passionate <strong>Data Analyst & Machine Learning Enthusiast</strong> who loves turning raw data into clear, actionable insights.</p>
+    <p>I work with <strong>Python, SQL, Power BI, and Excel</strong> to clean, analyze and visualize data. On the machine learning side, I build models for <strong>regression, classification, recommendation systems, NLP, and computer vision</strong>.</p>
+    <p>Some of my key projects include <strong>House Price Prediction</strong>, <strong>Beauty Product Recommendation</strong>, <strong>Remote Worker Mental Health Prediction</strong>, <strong>Sentiment Analysis on Clothing Reviews</strong>, and <strong>Image-based Similarity & Object Detection</strong>.</p>
+    <p>I enjoy learning by building end-to-end projects – from data collection and EDA to model deployment on <strong>Streamlit</strong>. I’m actively looking for opportunities as a <strong>Data Analyst / Junior Data Scientist</strong>.</p>
+  </div>
+</section>
+
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section bg-light">
+  <div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+
+      <!-- Beauty Product Recommendation -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/Beauty thumbnail.jpg" class="card-img-top" alt="Beauty Product Recommendation">
+          <div class="card-body">
+            <h5 class="card-title">Beauty Product Recommendation System</h5>
+            <p class="card-text">Hybrid recommendation engine using TF-IDF, cosine similarity, and user preferences to recommend relevant beauty products.</p>
+            <a href="https://beautyrecomendation-qxpwj9uaxbzik25zmfs7tq.streamlit.app/" class="btn btn-primary" target="_blank">App Link</a>
+            <a href="https://github.com/mrambo04/All-Beauty-Recommended-Systems" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mental Health Prediction -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/Mental Health Prediction thumbnail.jpg" class="card-img-top" alt="Mental Health Prediction">
+          <div class="card-body">
+            <h5 class="card-title">Remote Worker Mental Health Prediction</h5>
+            <p class="card-text">Machine learning model that predicts potential mental health risk for remote workers using survey-based features.</p>
+            <a href="https://mentalhealthstatus.streamlit.app/" class="btn btn-primary" target="_blank">App Link</a>
+            <a href="https://github.com/mrambo04/Remote-Worker-Mental-Health-ML-" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- House Price Prediction -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/House price thumbnail.jpg" class="card-img-top" alt="House Price Prediction">
+          <div class="card-body">
+            <h5 class="card-title">House Price Prediction</h5>
+            <p class="card-text">Regression model built using ensemble learning (Random Forest) to predict house prices with strong R² performance.</p>
+            <a href="https://github.com/mrambo04/House-Price-Prediction" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sentiment Analysis -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/sentiment.png" class="card-img-top" alt="Sentiment Analysis">
+          <div class="card-body">
+            <h5 class="card-title">Sentiment Analysis – Clothing Reviews</h5>
+            <p class="card-text">NLP pipeline to classify customer reviews into sentiment classes using TF-IDF features and ML models.</p>
+            <a href="https://github.com/mrambo04/Sentiment-Analysis-on-Women-s-Clothing-Reviews-NLP-" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footwear Similar Image Retrieval -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/Similar_images footware thumbnail.jpg" class="card-img-top" alt="Footwear Similarity">
+          <div class="card-body">
+            <h5 class="card-title">Footwear Similar Image Retrieval</h5>
+            <p class="card-text">Computer vision project using CNN embeddings and cosine similarity to retrieve visually similar footwear images.</p>
+            <a href="https://github.com/mrambo04/Similar-images-on-footwear" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Necklace Object Detection -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/object detection thumbnail.jpg" class="card-img-top" alt="Necklace Object Detection">
+          <div class="card-body">
+            <h5 class="card-title">Necklace Type Object Detection</h5>
+            <p class="card-text">Object detection pipeline using deep learning to detect and classify necklace types with bounding boxes.</p>
+            <a href="https://github.com/mrambo04/Object-detection-on-Necklace-/tree/main" class="btn btn-secondary" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section bg-white">
+  <div class="container">
+    <h2 class="text-center mb-5"> Skills Covered</h2>
+    <div class="row">
+
+      <!-- Skill 1 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/python.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Python</h5>
+            <p class="card-text">Core programming language for all data science workflows including data analysis, automation, and machine learning model development.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/ml.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Machine Learning</h5>
+            <p class="card-text">Experience building predictive models using regression, classification, clustering, and ensemble methods with Scikit-learn.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/dl.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Deep Learning</h5>
+            <p class="card-text">Hands-on experience with neural networks, CNNs, and RNNs using TensorFlow and PyTorch for AI applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/nlp.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Natural Language Processing</h5>
+            <p class="card-text">Implemented NLP models for sentiment analysis, summarization, and query based text generation using BERT and BART.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 5 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/genai.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Generative AI</h5>
+            <p class="card-text">Explored LLMs, prompt engineering, and fine tuning using Hugging Face and OpenAI APIs to build intelligent applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 6 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/powerbi.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Power BI</h5>
+            <p class="card-text">Developed interactive dashboards to visualize key metrics and business insights for data driven decision making.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 7 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/mysql.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">MySQL</h5>
+            <p class="card-text">Skilled in database creation, SQL queries, joins, and integrating data pipelines with Python and analytics tools.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 8 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/excel.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Excel</h5>
+            <p class="card-text">Strong command of Excel for data analysis, pivot tables, Power Query, and quick visual insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 9 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/datacleaning.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Cleaning</h5>
+            <p class="card-text">Processed and transformed messy data into structured datasets using Python libraries like Pandas and NumPy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 10 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/statistics.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Statistics & Probability</h5>
+            <p class="card-text">Applied statistical concepts like distributions, correlation, and hypothesis testing for analytical insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 11 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/eda.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Exploratory Data Analysis</h5>
+            <p class="card-text">Performed univariate, bivariate, and multivariate analysis to uncover patterns and data insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 12 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/datavis.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Visualization</h5>
+            <p class="card-text">Created advanced visualizations using Matplotlib, Seaborn, Plotly, and Power BI for impactful storytelling.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 13 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/thinking.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Critical Thinking & Problem Solving</h5>
+            <p class="card-text">Used analytical reasoning to identify data driven solutions and optimize business or model outcomes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 14 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/modeleval.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Model Evaluation</h5>
+            <p class="card-text">Evaluated models using metrics like RMSE, ROC AUC, Precision, Recall, and F1-Score to ensure high accuracy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 15 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/featureeng.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Feature Engineering</h5>
+            <p class="card-text">Transformed and created features to boost model performance and extract more predictive insights.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 16 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/modeldeploy.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Model Deployment</h5>
+            <p class="card-text">Deployed models using Streamlit locally and on the cloud for real time accessibility and interactivity.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 17 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/dataeng.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Engineering</h5>
+            <p class="card-text">Built ETL pipelines, automated data workflows, and integrated structured and unstructured data sources.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 18 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/datastory.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Data Storytelling</h5>
+            <p class="card-text">Turned complex datasets into actionable stories using visual reports and dashboard presentations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 19 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/webscraping.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Web Scraping</h5>
+            <p class="card-text">Collected and analyzed large scale data using BeautifulSoup and Selenium for insights and automation.</p>
+          </div>
+        </div>
+      </div>
+
+            <!-- Skill 20 -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/skills/cloud.png" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">Cloud Computing</h5>
+            <p class="card-text">The ability to deploy, scale, and manage machine learning models and data pipelines on cloud platforms essential for real world, production level data science solutions.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section text-center text-white bg-dark">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+      </div>
+      <div class="col-lg-6">
+        <p><i class="fas fa-phone"></i> +91-XXXXXXXXXX</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://www.linkedin.com/in/rambabu-bevara-/" target="_blank">
+          <img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://github.com/mrambo04" target="_blank">
+          <img src="icons/github.png" alt="GitHub" class="social-icon">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://www.kaggle.com/rambabubevara" target="_blank">
+          <img src="icons/kaggle.png" alt="Kaggle" class="social-icon">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="#" target="_blank">
+          <img src="icons/youtube.png" alt="YouTube" class="social-icon">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="#" target="_blank">
+          <img src="icons/medium.png" alt="Medium" class="social-icon">
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="#" target="_blank">
+          <img src="icons/cert.png" alt="Certificates" class="social-icon">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">Portfolio</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
