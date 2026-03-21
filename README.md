@@ -37,7 +37,7 @@ Visit the **Projects** section on the site for links to “Live Demo” (where a
 ---
 
 ## 📫 Contact  
-- **Email:** your.email@example.com  
+- **Email:** rambabubevara004@gmail.com 
 - **LinkedIn:** [linkedin.com/in/rambabu-bevara-/](https://www.linkedin.com/in/rambabu-bevara-/)  
 - **GitHub:** [github.com/mrambo04](https://github.com/mrambo04)  
 - **WhatsApp:** +91 9391898634  
