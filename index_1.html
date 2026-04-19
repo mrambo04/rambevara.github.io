@@ -1,1 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ram Bevara | Data Analyst & ML Enthusiast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ============================================
+           GLOBAL STYLES & COLOR PALETTE
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --primary: #0066ff;
+            --primary-dark: #0052cc;
+            --secondary: #1a1a2e;
+            --accent: #16c784;
+            --text-dark: #0a0e27;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --gradient-primary: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+            --gradient-dark: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 102, 255, 0.08);
+            --shadow-md: 0 8px 24px rgba(0, 102, 255, 0.12);
+            --shadow-lg: 0 12px 40px rgba(0, 102, 255, 0.15);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ============================================
+           NAVBAR STYLES
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 102, 255, 0.1);
+            transition: var(--transition);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(240, 247, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(22, 199, 132, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+        }
+
+        .typing-text {
+            height: 60px;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .hero-image-box {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--gradient-primary);
+            padding: 2px;
+        }
+
+        .hero-image-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            opacity: 0.1;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .hero-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 18px;
+            background: var(--bg-light);
+            display: block;
+        }
+
+        /* ============================================
+           SECTION STYLES
+           ============================================ */
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            margin-top: 1rem;
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        #about {
+            background: var(--bg-light);
+            position: relative;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-wrapper {
+            position: relative;
+            width: 80%;
+            aspect-ratio: 1;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .about-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
+
+        .about-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-dark);
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-highlight {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           PROJECTS SECTION
+           ============================================ */
+        #projects {
+            background: white;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--bg-light);
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .project-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(0, 102, 255, 0.1);
+            color: var(--primary);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .project-links a {
+            flex: 1;
+            padding: 0.75rem 1.25rem;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .project-links a.primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .project-links a.primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+        }
+
+        .project-links a.secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .project-links a.secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ============================================
+           SKILLS SECTION
+           ============================================ */
+        #skills {
+            background: linear-gradient(135deg, rgba(240, 247, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(22, 199, 132, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover .skill-icon {
+            background: var(--gradient-primary);
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .skill-card img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            object-fit: contain;
+        }
+
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .skill-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        #contact {
+            background: var(--text-dark);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact .section-title {
+            color: white;
+        }
+
+        #contact .section-title::after {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .contact-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin: 3rem 0;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+        }
+
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--primary);
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           AOS CUSTOM ANIMATIONS
+           ============================================ */
+        [data-aos="fade-up-custom"] {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        [data-aos="slide-up"] {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .typing-text {
+                font-size: 2rem;
+                height: 50px;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            #home {
+                margin-top: 60px;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 0.75rem;
+                font-size: 0.8rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .typing-text {
+                font-size: 1.5rem;
+                height: 40px;
+            }
+
+            .section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .projects-grid {
+                gap: 1.5rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-image {
+                height: 150px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav id="navbar">
+        <div class="navbar-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-chart-line"></i> Ram Bevara
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Hi, I'm <span style="color: var(--primary);">Ram Bevara</span></h1>
+                <div class="typing-text" id="typingText"></div>
+                <p class="hero-subtitle">
+                    I transform raw data into actionable insights using Python, SQL, Power BI, and Machine Learning. 
+                    Passionate about building end-to-end ML projects and solving real-world problems with data.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-project-diagram"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-up" data-aos-delay="200">
+                <div class="hero-image-box">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/About/Profile.png" alt="Ram Bevara">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="section">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Let me tell you my story</p>
+            
+            <div class="about-container">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="about-image-wrapper">
+                        <img src="https://mrambo04.github.io/rambevara.github.io/Images/About/Profile.png" alt="Ram Bevara">
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <p>
+                        Hi, I'm <span class="about-highlight">Rambabu Bevara</span>, a passionate <span class="about-highlight">Data Analyst & Machine Learning Enthusiast</span> who loves turning raw data into clear, actionable insights.
+                    </p>
+                    <p>
+                        I work with <span class="about-highlight">Python, SQL, Power BI, and Excel</span> to clean, analyze and visualize data. On the machine learning side, I build models for regression, classification, recommendation systems, NLP, and computer vision.
+                    </p>
+                    <p>
+                        Some of my key projects include <span class="about-highlight">House Price Prediction</span>, <span class="about-highlight">Beauty Product Recommendation</span>, <span class="about-highlight">Remote Worker Mental Health Prediction</span>, <span class="about-highlight">Sentiment Analysis</span>, and <span class="about-highlight">Image Classification</span>.
+                    </p>
+                    <p>
+                        I enjoy learning by building end-to-end projects – from data collection and EDA to model deployment on Streamlit. I'm actively looking for opportunities as a <span class="about-highlight">Data Analyst / Junior Data Scientist</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="section">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Explore my recent work and achievements</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/house_price.png" alt="House Price Prediction" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">House Price Prediction</h3>
+                        <p class="project-description">
+                            Regression model using ensemble learning (Random Forest) to predict house prices with strong R² performance.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">ML</span>
+                            <span class="tag">Regression</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mrambo04/House-Price-Prediction" target="_blank" class="primary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/Beauty thumbnail.jpg" alt="Beauty Product Recommendation" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Beauty Product Recommendation</h3>
+                        <p class="project-description">
+                            Hybrid recommendation engine using TF-IDF, cosine similarity, and user preferences to recommend relevant beauty products.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://beautyrecomendation-qxpwj9uaxbzik25zmfs7tq.streamlit.app/" target="_blank" class="primary" title="Live App">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                            <a href="https://github.com/mrambo04/All-Beauty-Recommended-Systems" target="_blank" class="secondary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/men.jpg" alt="Mental Health Prediction" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Remote Worker Mental Health</h3>
+                        <p class="project-description">
+                            ML model that predicts potential mental health risk for remote workers using survey-based features.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">ML</span>
+                            <span class="tag">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://mentalhealthstatus.streamlit.app/" target="_blank" class="primary" title="Live App">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                            <a href="https://github.com/mrambo04/Remote-Worker-Mental-Health-ML-" target="_blank" class="secondary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/eda_realestate.png" alt="Real Estate EDA" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Real Estate by Weather & Disaster</h3>
+                        <p class="project-description">
+                            EDA on real estate data combined with weather and disaster factors, finding patterns that affect property demand.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">EDA</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mrambo04/Exploratory-Data-Analysis-on-Real-Estate-by-Weather" target="_blank" class="primary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/sentiment.png" alt="Sentiment Analysis" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Sentiment Analysis – Clothing Reviews</h3>
+                        <p class="project-description">
+                            NLP pipeline to classify customer reviews into sentiment classes using TF-IDF features and ML models.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Classification</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mrambo04/Sentiment-Analysis-on-Women-s-Clothing-Reviews-NLP-" target="_blank" class="primary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/tribe.png" alt="Tribe Image Classification" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Tribe Image Classification</h3>
+                        <p class="project-description">
+                            Deep learning image classifier to identify different tribes/cultural groups using CNN and transfer learning.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">CNN</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mrambo04/Tribe-image-classification" target="_blank" class="primary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/footwear.png" alt="Footwear Similarity" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Footwear Similar Image Retrieval</h3>
+                        <p class="project-description">
+                            Computer vision project using CNN embeddings and cosine similarity to retrieve visually similar footwear images.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mrambo04/Similar-images-on-footwear" target="_blank" class="primary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Projects/necklace.png" alt="Necklace Object Detection" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Necklace Type Object Detection</h3>
+                        <p class="project-description">
+                            Object detection pipeline using deep learning to detect and classify necklace types with bounding boxes.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">Object Detection</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mrambo04/Object-detection-on-Necklace-/tree/main" target="_blank" class="primary" title="View Source Code">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="section">
+            <h2 class="section-title" data-aos="fade-up">Skills & Expertise</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Technologies and tools I work with</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/python.png" alt="Python">
+                    <h3 class="skill-name">Python</h3>
+                    <p class="skill-description">Core programming for data analysis, automation, and ML model development</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/ml.png" alt="Machine Learning">
+                    <h3 class="skill-name">Machine Learning</h3>
+                    <p class="skill-description">Regression, classification, clustering, and ensemble methods with Scikit-learn</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/dl.png" alt="Deep Learning">
+                    <h3 class="skill-name">Deep Learning</h3>
+                    <p class="skill-description">Neural networks, CNNs, RNNs using TensorFlow and PyTorch</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/nlp.png" alt="NLP">
+                    <h3 class="skill-name">Natural Language Processing</h3>
+                    <p class="skill-description">Sentiment analysis, summarization, and text generation with BERT & BART</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/genai.png" alt="Generative AI">
+                    <h3 class="skill-name">Generative AI</h3>
+                    <p class="skill-description">LLMs, prompt engineering, and fine-tuning with Hugging Face & OpenAI</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/powerbi.png" alt="Power BI">
+                    <h3 class="skill-name">Power BI</h3>
+                    <p class="skill-description">Interactive dashboards for data visualization and business insights</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/mysql.png" alt="MySQL">
+                    <h3 class="skill-name">SQL & Databases</h3>
+                    <p class="skill-description">Database design, queries, joins, and data pipeline integration</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/excel.png" alt="Excel">
+                    <h3 class="skill-name">Excel & Data Tools</h3>
+                    <p class="skill-description">Pivot tables, Power Query, and advanced analytics in Excel</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/eda.png" alt="EDA">
+                    <h3 class="skill-name">Exploratory Data Analysis</h3>
+                    <p class="skill-description">Univariate, bivariate, and multivariate analysis for pattern discovery</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="50">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/datavis.png" alt="Data Visualization">
+                    <h3 class="skill-name">Data Visualization</h3>
+                    <p class="skill-description">Matplotlib, Seaborn, Plotly, and Power BI for impactful storytelling</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/featureeng.png" alt="Feature Engineering">
+                    <h3 class="skill-name">Feature Engineering</h3>
+                    <p class="skill-description">Transform and create features to boost model performance</p>
+                </div>
+
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                    <img src="https://mrambo04.github.io/rambevara.github.io/Images/Skills/modeldeploy.png" alt="Model Deployment">
+                    <h3 class="skill-name">Model Deployment</h3>
+                    <p class="skill-description">Deploy models using Streamlit for real-time accessibility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="section">
+            <h2 class="section-title" data-aos="fade-up">Let's Connect</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Reach out to me for opportunities and collaborations</p>
+            
+            <div class="contact-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info">
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:rambabubevara004@gmail.com" class="contact-link">rambabubevara004@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919391898634" class="contact-link">+91-9391898634</a>
+                    </p>
+                </div>
+
+                <div class="social-links" data-aos="fade-up" data-aos-delay="300">
+                    <a href="https://www.linkedin.com/in/rambabu-bevara-/" target="_blank" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/mrambo04" target="_blank" class="social-link" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.kaggle.com/rambabubevara" target="_blank" class="social-link" title="Kaggle">
+                        <i class="fab fa-kaggle"></i>
+                    </a>
+                    <a href="https://wa.me/919391898634" target="_blank" class="social-link" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+
+                <p style="margin-top: 3rem; color: rgba(255, 255, 255, 0.7); font-size: 0.95rem;">
+                    © 2024 Ram Bevara. All rights reserved. | Built with <span style="color: #ff6b6b;">❤️</span> and passion for data.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // ============================================
+        // TYPING EFFECT FOR HERO SECTION
+        // ============================================
+        const words = [
+            'Data Analyst',
+            'ML Enthusiast',
+            'Problem Solver',
+            'Data Storyteller'
+        ];
+        
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            const typingElement = document.getElementById('typingText');
+            
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1500);
+                return;
+            }
+            
+            if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(typeEffect, 500);
+                return;
+            }
+            
+            setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+        
+        // Start typing effect when page loads
+        typeEffect();
+
+        // ============================================
+        // NAVBAR SCROLL EFFECT & ACTIVE LINK HIGHLIGHTING
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            // Add scrolled class when page is scrolled
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Update active nav link based on scroll position
+            updateActiveNavLink();
+        });
+        
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const link = document.querySelector(`a[href="#${section.id}"]`);
+                
+                if (link) {
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
+        
+        // Smooth scroll for nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ============================================
+        // INITIALIZE AOS (ANIMATE ON SCROLL)
+        // ============================================
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 100
+        });
+
+        // ============================================
+        // MOBILE MENU TOGGLE (Optional)
+        // ============================================
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinksContainer = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksContainer.style.display = 
+                navLinksContainer.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Close mobile menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinksContainer.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
